@@ -1,0 +1,8 @@
+[development]
+DB_ENV = "zipdrug-development-db"
+
+[stage]
+DB_ENV = "zipdrug-stage-db"
+
+[production]
+DB_ENV = "production-api-db"
