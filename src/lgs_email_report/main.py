@@ -2,7 +2,7 @@ import boto3
 import os
 import sys
 import pandas as pd
-from extract import get_lead_details
+from extract import get_lead_details, email_compose
 from utility.db import make_engine
 from utility.utils import parse_envs, create_logger
 
@@ -15,7 +15,9 @@ def execute():
     print("hai", sys.argv[1])
     engine = make_engine(db_env=DB_ENV)
     leads_data_df = get_lead_details(engine=engine, current_dt=sys.argv[1])
-    print("leads_data_df ",leads_data_df)
+    print("leads_data_df ", leads_data_df)
+
+    #email_compose(leads_data_df)
 
 
 if __name__ == "__main__":

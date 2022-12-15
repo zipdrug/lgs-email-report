@@ -9,3 +9,7 @@ def get_lead_details(engine, current_dt):
     leads_df = pd.read_sql(sql=leads_query, con=engine)
 
     return leads_df
+
+def email_compose(lead_df):
+    print("hai")
+
