@@ -7,5 +7,5 @@ def get_lead_details(engine, current_dt):
     #leads_query = CHECK_AUDIT_LEADS_QUERY
     print("leads_query ", leads_query)
     leads_df = pd.read_sql(sql=leads_query, con=engine)
-    # print("patient_id_df", patient_id_df)
+
     return leads_df
