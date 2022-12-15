@@ -54,18 +54,16 @@ COPY --from=builder-base $PYSETUP_PATH $PYSETUP_PATH
 # quicker install as runtime deps are already installed
 RUN poetry install
 
-COPY src/lgs_removezipcode /app
+COPY src/lgs_email_report /app
 # will become mountpoint of our code
 WORKDIR /app
 CMD ["python","main.py"]
-CMD ["python","topic_setup.py"]
 
 
 # `production` image used for runtime
 FROM python-base as production
 ENV RUN_ENV=production
 COPY --from=builder-base $PYSETUP_PATH $PYSETUP_PATH
-COPY src/lgs_removezipcode /app
+COPY src/lgs_email_report /app
 WORKDIR /app
 CMD ["python","main.py"]
-CMD ["python","topic_setup.py"]
