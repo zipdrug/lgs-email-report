@@ -2,7 +2,7 @@ import pandas as pd
 from queries.sql_statement import CHECK_AUDIT_LEADS_QUERY
 
 def get_lead_details(engine, dt):
-    leads_query = CHECK_AUDIT_LEADS_QUERY.format(curr_date=dt)
+    leads_query = CHECK_AUDIT_LEADS_QUERY.format(cur_dt=dt)
     print("leads_query ",leads_query)
     leads_df = pd.read_sql(sql=leads_query, con=engine)
     # print("patient_id_df", patient_id_df)
