@@ -14,7 +14,7 @@ DB_ENV: str = environment_secrets["DB_ENV"]
 def execute():
     print("hai", sys.argv[1])
     engine = make_engine(db_env=DB_ENV)
-    leads_data_df = get_lead_details(engine=engine, cur_dt=sys.argv[1])
+    leads_data_df = get_lead_details(engine=engine, current_dt=sys.argv[1])
     print("leads_data_df ",leads_data_df)
 
 
