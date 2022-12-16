@@ -16,11 +16,10 @@ def email_compose(lead_df):
     for i in lead_df.index:
         if lead_df['status'][i] == 1:
             network = str(lead_df['network'][i]) + "\t\t\t\t"
-
             pharmacy=str(lead_df['pharmacy'][i]) + "\t\t\t\t\t"
             npi=str(lead_df['npi'][i]) + "\t\t\t\t\t"
             member=str(lead_df['members'][i]) + "\t\t\t\t"
-            s_message = "\n"
+            s_message = s_message + "\n"
             s_message = s_message + network + pharmacy + npi + member
     print("output")
     print(s_message)
