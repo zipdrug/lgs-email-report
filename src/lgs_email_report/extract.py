@@ -19,7 +19,7 @@ def email_compose(lead_df):
 
             pharmacy=str(lead_df['pharmacy'][i]) + "\t\t\t\t\t"
             npi=str(lead_df['npi'][i]) + "\t\t\t\t\t"
-            member=str(lead_df['member'][i]) + "\t\t\t\t"
+            member=str(lead_df['members'][i]) + "\t\t\t\t"
             s_message = "\n"
             s_message = s_message + network + pharmacy + npi + member
     print("output")
