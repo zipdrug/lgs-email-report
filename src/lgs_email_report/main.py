@@ -18,7 +18,7 @@ def execute():
     leads_data_df = get_lead_details(engine=engine, current_dt=dt)
     print("leads_data_df ", leads_data_df)
 
-    #email_compose(leads_data_df)
+    email_compose(leads_data_df)
 
 
 if __name__ == "__main__":
