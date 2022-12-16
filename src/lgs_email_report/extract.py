@@ -12,7 +12,7 @@ def get_lead_details(engine, current_dt):
 
 def email_compose(lead_df):
     print("hai")
-    s_message = "Network\t\t\t\tPharmacy\t\t\tNPI\t\t\t\t\tMember\t\t\t\t"
+    s_message = "Network\t\t\t\tPharmacy\t\t\t\t\tNPI\t\t\t\t\tMember\t\t\t\t"
     for i in lead_df.index:
         if lead_df['status'][i] == 1:
             network = str(lead_df['network'][i]) + "\t\t\t\t"
