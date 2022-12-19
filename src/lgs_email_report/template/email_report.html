@@ -71,17 +71,17 @@
             <table style="width:25%">
                 <tr>
                 {% for j in range(sc_len) %}
-                <tr><th>Network</th><th> {{ sc_net[j] }} </th></tr>
+                <tr><th>Network-</th><th> {{ sc_net[j] }} </th></tr>
                  </tr>
                         <tr>
-                            <th style="text-align: center; padding: 8px;">Pharmacy</th>
+                            <th style="text-align: center; padding: 16px;">Pharmacy</th>
                              <th style="text-align: center; padding: 8px;">NPI</th>
                             <th style="text-align: center; padding: 8px;">Members</th>
                         </tr>
                         {% for i in range(sc_df|length) %}
                             {% if sc_net[j] == sc_df['network'][i] %}
         <tr>
-            <td style="font-weight:400; text-align: center; padding: 8px;">{{ sc_df['pharmacy'][i] }}</td>
+            <td style="font-weight:400; text-align: center; padding: 16px;">{{ sc_df['pharmacy'][i] }}</td>
             <td style="font-weight:400; text-align: center; padding: 8px;">{{ sc_df['npi'][i] }}</td>
             <td style="font-weight:400; text-align: center; padding: 8px;">{{ sc_df['members'][i] }}</td>
         </tr>
@@ -90,6 +90,35 @@
                         {% endfor %}
 
 </table>
+    </div>
+        <div class="items" style="font-family: Roboto; padding-bottom: 13.28px;">
+        <h3 style="margin-bottom: 8px;"><b>Total Members Not Matched to Pharmacy</b></h3>
+        <div class="description" style="font-family: Roboto; font-weight: 200; padding-bottom:8px;">
+            The following tables show the number of member who do not have pharmacy coverage available.
+            The members are displayed by network and zip code.These members were not matched to a new pharmacy.
+        </div>
+
+            <table style="width:25%">
+                <tr>
+                {% for j in range(fl_len) %}
+                <tr><th>Network-</th><th> {{ fl_net[j] }} </th></tr>
+                 </tr>
+                        <tr>
+                            <th style="text-align: center; padding: 16px;">Zipcode</th>
+                             <th style="text-align: center; padding: 8px;">Members</th>
+                        </tr>
+                        {% for i in range(sc_df|length) %}
+                            {% if sc_net[j] == sc_df['network'][i] %}
+        <tr>
+            <td style="font-weight:400; text-align: center; padding: 16px;">{{ fl_df['zipcode'][i] }}</td>
+            <td style="font-weight:400; text-align: center; padding: 8px;">{{ fl_df['members'][i] }}</td>
+
+        </tr>
+                            {% endif %}
+                {% endfor %}
+                        {% endfor %}
+
+        </table>
     </div>
          </div>
 </div>
