@@ -1,4 +1,5 @@
 import pandas as pd
+import jinja2
 from queries.sql_statement import CHECK_AUDIT_LEADS_SUCCESS_QUERY, CHECK_AUDIT_LEADS_FAILURE_QUERY
 
 def get_lead_details(engine, current_dt):
@@ -28,16 +29,14 @@ def email_compose(lead_suc_df, lead_fail_df):
     '''
     title = 'My Report'
     body_title = 'Total members matched to pharmacy'
+    sc_network_lst = list(set(lead_suc_df['Network']))
+    sc_lst_len = len(sc_network_lst)
+    fl_network_lst = list(set(lead_fail_df['Network']))
+    fl_lst_len = len(fl_network_lst)
 
-    html = f'''
-    <html>
-    <head><tile>{title}</title>
-    </head>
-    <body>
-    <h1>{body_title}</h1>
-      <h1 style="border:orange;">{lead_suc_df.to_html()}</h1>
-    </body>
-    </html>
-    '''
+
+
+
+
 
 
