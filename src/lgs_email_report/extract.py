@@ -1,6 +1,11 @@
 import pandas as pd
 import jinja2
+import os
+from utility.archive_file import upload_to_s3
 from queries.sql_statement import CHECK_AUDIT_LEADS_SUCCESS_QUERY, CHECK_AUDIT_LEADS_FAILURE_QUERY
+from utility.utils import parse_envs
+
+env_name, environment_secrets = parse_envs()
 
 def get_lead_details(engine, current_dt):
     print("engine ", engine)
@@ -41,6 +46,11 @@ def email_compose(lead_suc_df, lead_fail_df):
     with open('Email_Report_Out.html', 'w') as f:
         f.write(html)
 
+    bucket = environment_secrets["S3_ARCHIVE_BUCKET"]
+    prefix = environment_secrets["S3_ARCHIVE_PREFIX"]
+    rx_object_name = prefix + os.path.basename('Email_Report_Out.html')
+    upload_to_s3('Email_Report_Out.html', bucket, rx_object_name)
+    #mbr_object_name = prefix + os.path.basename(mbr_file)
 
 
 
