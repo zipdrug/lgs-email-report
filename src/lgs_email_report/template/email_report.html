@@ -72,7 +72,7 @@
             <table style="font-family: Roboto; border-collapse: collapse; max-width: 600px">
                 <tr>
                 {% for j in range(sc_len) %}
-                <tr><th style="text-align: left; padding: 8px;">Network</th><th style="text-align: left; padding: 8px;"> {{ sc_net[j] }} </th><th></th></tr>
+                <tr><th style="text-align: left; padding: 8px;">Network {{ sc_net[j] }} </th><th>  </th><th></th></tr>
                  </tr>
                         <tr>
                             <th style="text-align: left; padding: 8px;">Pharmacy</th>
@@ -106,13 +106,13 @@
                 <tr><th style="text-align: left; padding: 8px;">Network</th><th style="text-align: left; padding: 8px;"> {{ fl_net[j] }} </th></tr>
                  </tr>
                         <tr>
-                            <th style="text-align: left; padding: 16px;">Zipcode</th>
+                            <th style="text-align: left; padding: 8px;">Zipcode</th>
                              <th style="text-align: left; padding: 8px;">Members</th>
                         </tr>
                         {% for i in range(fl_df|length) %}
                             {% if fl_net[j] == fl_df['network'][i] %}
         <tr>
-            <td style="font-weight:400; text-align: left; padding: 16px;">{{ fl_df['zipcode'][i] }}</td>
+            <td style="font-weight:400; text-align: left; padding: 8px;">{{ fl_df['zipcode'][i] }}</td>
             <td style="font-weight:400; text-align: left; padding: 8px;">{{ fl_df['members'][i] }}</td>
 
         </tr>
