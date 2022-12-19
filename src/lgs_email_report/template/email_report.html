@@ -108,7 +108,7 @@
                              <th style="text-align: center; padding: 8px;">Members</th>
                         </tr>
                         {% for i in range(fl_df|length) %}
-                            {% if fl_df[j] == fl_df['network'][i] %}
+                            {% if fl_net[j] == fl_df['network'][i] %}
         <tr>
             <td style="font-weight:400; text-align: center; padding: 16px;">{{ fl_df['zipcode'][i] }}</td>
             <td style="font-weight:400; text-align: center; padding: 8px;">{{ fl_df['members'][i] }}</td>
