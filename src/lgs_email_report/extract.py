@@ -37,6 +37,7 @@ def email_compose(lead_suc_df, lead_fail_df):
     template = jinja_env.get_template('email_report.html')
     #html = template.render(sc_df=lead_suc_df, sc_net=sc_network_lst, sc_len=sc_lst_len, fl_df=lead_fail_df, fl_net=fl_network_lst, fl_len=fl_lst_len)
     html = template.render(sc_df=lead_suc_df, sc_net=sc_network_lst, sc_len=sc_lst_len)
+    print("html", html)
     with open('Email_Report_Out.html', 'w') as f:
         f.write(html)
 
