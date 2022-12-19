@@ -64,7 +64,7 @@
     <div class="items" style="font-family: Roboto; padding-bottom: 13.28px;">
         <h3 style="margin-bottom: 8px;"><b>Total Members Matched to Pharmacy</b></h3>
         <div class="description" style="font-family: Roboto; font-weight: 200; padding-bottom:8px;">
-            The following tables show the number of member who where rematch to the a new pharmacy.
+            The following tables show the number of member who where rematch to the new pharmacy.
             The members are displayed by network, pharmacy name and NPI.
         </div>
 
@@ -79,11 +79,11 @@
                             <th style="text-align: center; padding: 8px;">Members</th>
                         </tr>
                         {% for i in range(sc_df|length) %}
-                            {% if sc_net[j] == sc_df['Network'][i] %}
+                            {% if sc_net[j] == sc_df['network'][i] %}
         <tr>
-            <td style="font-weight:400; text-align: center; padding: 8px;">{{ sc_df['Pharmacy'][i] }}</td>
-            <td style="font-weight:400; text-align: center; padding: 8px;">{{ sc_df['NPI'][i] }}</td>
-            <td style="font-weight:400; text-align: center; padding: 8px;">{{ sc_df['Members'][i] }}</td>
+            <td style="font-weight:400; text-align: center; padding: 8px;">{{ sc_df['pharmacy'][i] }}</td>
+            <td style="font-weight:400; text-align: center; padding: 8px;">{{ sc_df['npi'][i] }}</td>
+            <td style="font-weight:400; text-align: center; padding: 8px;">{{ sc_df['members'][i] }}</td>
         </tr>
                             {% endif %}
                 {% endfor %}

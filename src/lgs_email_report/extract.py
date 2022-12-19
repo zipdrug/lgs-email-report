@@ -29,9 +29,9 @@ def email_compose(lead_suc_df, lead_fail_df):
     '''
     title = 'My Report'
     body_title = 'Total members matched to pharmacy'
-    sc_network_lst = list(set(lead_suc_df['Network']))
+    sc_network_lst = list(set(lead_suc_df['network']))
     sc_lst_len = len(sc_network_lst)
-    fl_network_lst = list(set(lead_fail_df['Network']))
+    fl_network_lst = list(set(lead_fail_df['network']))
     fl_lst_len = len(fl_network_lst)
     jinja_env = jinja2.Environment(loader=jinja2.FileSystemLoader('template'))
     template = jinja_env.get_template('email_report.html')
