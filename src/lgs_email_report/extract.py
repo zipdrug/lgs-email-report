@@ -4,6 +4,7 @@ import os
 from utility.archive_file import upload_to_s3
 from queries.sql_statement import CHECK_AUDIT_LEADS_SUCCESS_QUERY, CHECK_AUDIT_LEADS_FAILURE_QUERY
 from utility.utils import parse_envs
+from send_email import send_email_report
 
 env_name, environment_secrets = parse_envs()
 
@@ -46,6 +47,8 @@ def email_compose(lead_suc_df, lead_fail_df):
     print("html", html)
     with open('Email_Report_Out.html', 'w') as f:
         f.write(html)
+
+    send_email_report(html)
 
     bucket = environment_secrets["S3_ARCHIVE_BUCKET"]
     prefix = environment_secrets["S3_ARCHIVE_PREFIX"]
