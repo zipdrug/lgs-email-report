@@ -17,7 +17,7 @@ def parse_envs():
     if run_environment:
         with open("config.toml", "r") as tml:
             cfg = toml.load(tml)
-        print("suren cfg",cfg)
+        #print("suren cfg",cfg)
         return run_environment, cfg[run_environment]
     else:
         raise TypeError(

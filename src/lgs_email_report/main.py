@@ -12,11 +12,11 @@ print('environment_secrets:', environment_secrets)
 DB_ENV: str = environment_secrets["DB_ENV"]
 
 def execute():
-    print("hai", sys.argv[1])
+    #print("hai", sys.argv[1])
     dt = str(sys.argv[1])
     engine = make_engine(db_env=DB_ENV)
     leads_suc_data_df, leads_fail_data_df = get_lead_details(engine=engine, current_dt=dt)
-    print("leads_data_df ", leads_suc_data_df)
+    #print("leads_data_df ", leads_suc_data_df)
 
     email_compose(leads_suc_data_df, leads_fail_data_df)
 
