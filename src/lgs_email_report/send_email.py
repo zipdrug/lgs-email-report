@@ -4,7 +4,7 @@ from utility.utils import parse_envs
 
 def send_email_report(body_html):
     env_name, environment_secrets = parse_envs()
-    RECIPIENT = "surendran.dhashnamurthy@elevancehealth.com"
+    RECIPIENT = environment_secrets["RECIPIENT"]
     SENDER = "no-reply@zipdrug.com"
 
     # If necessary, replace us-west-2 with the AWS Region you're using for Amazon SES.

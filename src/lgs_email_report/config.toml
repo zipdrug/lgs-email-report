@@ -2,9 +2,12 @@
 DB_ENV = "zipdrug-development-db"
 S3_ARCHIVE_BUCKET = "zipdrug-data-lake"
 S3_ARCHIVE_PREFIX = "etl/test/"
+RECIPIENT = "jforehand@elevancehealth.com"
 
 [stage]
 DB_ENV = "zipdrug-stage-db"
+RECIPIENT = "jforehand@elevancehealth.com"
 
 [production]
 DB_ENV = "production-api-db"
+RECIPIENT = "jforehand@elevancehealth.com"
